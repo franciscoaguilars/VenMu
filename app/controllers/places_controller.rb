@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
     skip_before_action :authenticate_user!, only: [ :index, :show ]
-    
-    
+
+
     def index
         if params[:query]
             @query = params[:query]
@@ -12,14 +12,14 @@ class PlacesController < ApplicationController
             @places = Place.select("goats.*").where(sql_query, query: "%#{params[:query]}%")
 
             @geocodedPlaces = Goat.select("goats.*").where(sql_query, query: "%#{params[:query]}%").geocoded
-      
+
             @markers = display_markers(@geocodedPlaces)
 
         else
             @places = Place.all
 
             @geocodedPlaces = Place.geocoded
-      
+
             @markers = display_markers(@geocodedPlaces)
         end
     end
@@ -63,7 +63,7 @@ class PlacesController < ApplicationController
 
     private
     def strong_params
-        params.require(:place).permit(:name, :top_genre, :category, :address, :url, :description, :phone_number)
+        params.require(:place).permit(:name, :top_genre, :category, :address, :url, :description, :phone_number, photos: [])
     end
 
     def display_markers(geocoded)
