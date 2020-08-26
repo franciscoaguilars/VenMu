@@ -1,0 +1,8 @@
+
+  <%= simple_form_for @place do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, "CREATE GOAT", class: 'btn btn-primary btn-block rounded shadow' %>
+  <% end %>
+
