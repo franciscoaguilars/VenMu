@@ -9,9 +9,9 @@ class PlacesController < ApplicationController
               name ILIKE :query \
               OR top_genre ILIKE :query \
             "
-            @places = Place.select("goats.*").where(sql_query, query: "%#{params[:query]}%")
+            @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
 
-            @geocodedPlaces = Goat.select("goats.*").where(sql_query, query: "%#{params[:query]}%").geocoded
+            @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
 
             @markers = display_markers(@geocodedPlaces)
 
