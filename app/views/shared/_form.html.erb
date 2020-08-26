@@ -1,8 +1,13 @@
 
   <%= simple_form_for @place do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, required: true, placeholder: "Place name" %>
+    <%= f.input :address %>
+    <%= f.input :category %>
+    <%= f.input :top_genre %>
     <%= f.input :description %>
+    <%= f.input :phone_number %>
+    <%= f.input :url %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, "CREATE GOAT", class: 'btn btn-primary btn-block rounded shadow' %>
+    <%= f.button :submit, "Add Photos", class: 'btn btn-primary btn-block rounded shadow' %>
   <% end %>
 

@@ -1,0 +1,59 @@
+.home-page{
+    height: 100vh;
+    width : 100vw;
+    background-image: url("https://res.cloudinary.com/detnzqadn/image/upload/v1598463761/photo-1543007630-9710e4a00a20_jg8nze.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.title{
+    font-weight: 900;
+    font-size: 50px;
+    color: #FFFFFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.sub-title{
+    font-weight: bold;
+    font-style: normal;
+    font-size: 24px;
+    color: #FFFFFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.under-search{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.search_genre{
+    margin: 0;
+}
+
+
+.search-bar{
+    border-radius: 20px;
+    background: none;
+    width: 90vw
+}
+
+.search-bar::placeholder{
+    color: white;
+    text-align: center;
+}
+
+.search-bar:focus{
+    color: white;
+    background: none;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.submit-btn{
+    background: none;
+    border: none;
+    position:absolute;
+    right: -1;
+}
