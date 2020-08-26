@@ -11,7 +11,7 @@ class PlacesController < ApplicationController
           "
           @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
 
-          @geocodedPlaces = Goat.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
+          @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
 
           @markers = display_markers(@geocodedPlaces)
 
