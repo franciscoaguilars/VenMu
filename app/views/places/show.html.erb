@@ -1,13 +1,13 @@
 <div class="show-container">
   <div class="show-main" style="background-image: url('<%= cl_image_path @place.photos[0].key %>')">
   </div>
-
-  <div class="place-container">
-    <div class="container">
+  <div class="place-container container">
+    <div class="place-info border-bottom">
       <h1 id="show-title"> <%= @place.name.capitalize %> </h1>
-      <h2 id="show-description"> <%= @place.address %> </h2>
+      <p id="show-address"> <%= @place.address %> </p>
+      <p id="show-url"> <%= @place.url %> </p>
         <!-- Slider main container -->
-      <div class="swiper-container">
+      <div class="swiper-container s1">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <% @place.photos.each do |photo| %>
@@ -15,8 +15,49 @@
           <% end %>
         </div>
         <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
       </div>
+    </div>
+    <div class="show-description border-bottom d-flex align-items-center">
+      <%= @place.description %>
+    </div>
+    <div class="show-reviews border-bottom">
+      <p id="reviews-title">Reviews</p>
+      <!-- Slider main container -->
+      <% if @place.reviews %>
+        <div class="swiper-container s2">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <% @place.reviews.each do |review| %>
+            <div class="swiper-slide">
+              <div class="reviews-card">
+                <p class="review-user"> <%= review.user.email  %> </p>
+                <div class="reviews-info d-flex align-items-end">
+                  <p class="review-content"> <%= review.content %> </p>
+                </div>
+                <p class="review-rating ">
+                  <% review.rating.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                </p>
+                <div class="tags-container d-flex align-items-center">
+                  <% if review.genres_reviews %>
+                    <% review.genres_reviews.each do |genre_review|%>
+                      <div class="tag d-flex align-items-center">
+                        <p class="tag-genre"> <%= genre_review.genre.name.capitalize %> </p>
+                      </div>
+                    <% end %>
+                  <% else %>
+
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <p class="review-content">No reviews yet</p>
+      <% end %>
     </div>
   </div>
 </div>

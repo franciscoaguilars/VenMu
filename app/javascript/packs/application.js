@@ -18,12 +18,19 @@ document.addEventListener('turbolinks:load', () => {
 
 });
 
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
+var swiper = new Swiper('.s1', {
+  slidesPerView: 2.7,
   spaceBetween: 10,
 
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
+  },
+});
+
+var swiper = new Swiper('.s2', {
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
   },
 });
