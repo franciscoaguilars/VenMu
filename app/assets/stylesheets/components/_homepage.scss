@@ -57,3 +57,48 @@
     position:absolute;
     right: -1;
 }
+
+.animate-bottom {
+    position: relative;
+    animation: animatebottom 0.4s;
+  }
+  
+  @keyframes animatebottom {
+    from {
+      bottom: -300px;
+      opacity: 0;
+    }
+  
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+}
+
+.genre-container{
+   height: 118px;
+   width: 132px;
+   background-size: cover;
+   background-position: center;
+   border-radius: 20px;
+   border: 1px solid #FFFFFF;
+   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.genre-title{
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 118px; 
+    font-weight: bold;  
+    font-size: 20px;
+    text-shadow: 4px 4px 4px #000000;
+}
+
+.modal-content{
+    background: none;
+}
+
+.light-background{
+    background: linear-gradient( rgba(255,255,255,0.5) 4%,rgba(255, 255, 255, 0.8) 100%)
+}
