@@ -3,25 +3,25 @@ class PlacesController < ApplicationController
 
 
   def index
-      if params[:query]
-          @query = params[:query]
-          sql_query = " \
-            name ILIKE :query \
-            OR top_genre ILIKE :query \
-          "
-          @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
+    if params[:query]
+      @query = params[:query]
+      sql_query = " \
+        name ILIKE :query \
+        OR top_genre ILIKE :query \
+      "
+      @places = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%")
 
-          @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
+      @geocodedPlaces = Place.select("places.*").where(sql_query, query: "%#{params[:query]}%").geocoded
 
-          @markers = display_markers(@geocodedPlaces)
+      @markers = display_markers(@geocodedPlaces)
 
-      else
-          @places = policy_scope(Place)
+    else
+      @places = policy_scope(Place)
 
-          @geocodedPlaces = Place.geocoded
+      @geocodedPlaces = Place.geocoded
 
-          @markers = display_markers(@geocodedPlaces)
-      end
+      @markers = display_markers(@geocodedPlaces)
+    end
   end
 
   def show
@@ -35,17 +35,18 @@ class PlacesController < ApplicationController
   end
 
   def create
-      @place = Place.new(strong_params)
-
-      if @place.save
-          redirect_to place_path(@place)
-      else
-          render :new
-      end
+    @place = Place.new(strong_params)
+    @place.user = current_user
+    authorize @place
+    if @place.save
+      redirect_to place_path(@place)
+    else
+      render :new
+    end
   end
 
   def edit
-      @place = Place.find(params[:id])
+    @place = Place.find(params[:id])
   end
 
   def update
