@@ -18,4 +18,8 @@ class PlacePolicy < ApplicationPolicy
 
   end
 
+  def create?
+    new?
+  end
+
 end
