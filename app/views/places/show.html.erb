@@ -1,21 +1,22 @@
-<div class="show-main" style="background-image: url('<%= cl_image_path @place.photos[0].key %>')">
-</div>
-
 <div class="show-container">
-  <div class="container">
-    <h1 id="show-title"> <%= @place.name.capitalize %> </h1>
-    <h2 id="show-description"> <%= @place.address %> </h2>
-      <!-- Slider main container -->
-    <div class="swiper-container">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <% @place.photos.each do |photo| %>
-          <div class="swiper-slide show-photo" style="background-image: url('<%= cl_image_path photo.key, height: 800, width: 800, crop: :thumb, gravity: :face %>')"></div>
-        <% end %>
+  <div class="show-main" style="background-image: url('<%= cl_image_path @place.photos[0].key %>')">
+  </div>
+
+  <div class="place-container">
+    <div class="container">
+      <h1 id="show-title"> <%= @place.name.capitalize %> </h1>
+      <h2 id="show-description"> <%= @place.address %> </h2>
+        <!-- Slider main container -->
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <% @place.photos.each do |photo| %>
+            <div class="swiper-slide show-photo" style="background-image: url('<%= cl_image_path photo.key, height: 800, width: 800, crop: :thumb, gravity: :face %>')"></div>
+          <% end %>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
       </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
     </div>
   </div>
 </div>
-
