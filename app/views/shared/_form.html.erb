@@ -1,13 +1,12 @@
-
   <%= simple_form_for @place do |f| %>
-    <%= f.input :name, required: true, placeholder: "Place name" %>
-    <%= f.input :address %>
-    <%= f.input :category %>
-    <%= f.input :top_genre %>
-    <%= f.input :description %>
-    <%= f.input :phone_number %>
-    <%= f.input :url %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, "Add Photos", class: 'btn btn-primary btn-block rounded shadow' %>
+    <%= f.input :name, required: true, label_html: { hidden: true }, placeholder: "Place name" %>
+    <%= f.input :address, required: true, label_html: { hidden: true }, placeholder: "address" %>
+    <%= f.input :category, required: true, label_html: { hidden: true }, placeholder: "What kind of place is this?" %>
+    <%= f.input :top_genre, required: true, label_html: { hidden: true }, placeholder: "Select genres played here" %>
+    <%= f.input :description, required: true, label_html: { hidden: true }, placeholder: "What's the music like?" %>
+    <%= f.input :phone_number, label_html: { hidden: true }, placeholder: "Phone number" %>
+    <%= f.input :url, label_html: { hidden: true }, placeholder: "www.website.com" %>
+    <label id="places-photo-label" class="file optional" for="place_photos">Photos</label>
+    <input class="form-control-file file optional" multiple="multiple" hidden="hidden" type="file" name="place[photos][]" id="place_photos">
+    <%= f.button :submit, "Add to VenMu", class: 'btn btn-primary btn-block rounded shadow mt-5' %>
   <% end %>
-
