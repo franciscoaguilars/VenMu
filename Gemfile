@@ -48,3 +48,6 @@ gem 'geocoder'
 
 # Dotenv
 gem 'dotenv-rails', groups: [:development, :test]
+
+# Font awesome
+gem "font-awesome-rails"
