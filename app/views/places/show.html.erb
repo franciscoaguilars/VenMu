@@ -1,3 +1,4 @@
+
 <div class="show-container">
   <div class="show-main" style="background-image: url('<%= cl_image_path @place.photos[0].key %>')">
   </div>
@@ -21,9 +22,39 @@
       <%= @place.description %>
     </div>
     <div class="show-reviews border-bottom">
+
+      <!-- Add review button -->
+      <div type="button" class="review-button" data-toggle="modal" data-target="#review-modal">
+        Add a review <i class="fas fa-plus"></i>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" id="review-modal-content">
+            <div class="modal-header border-bottom-0" id="review-modal-header">
+              <h5 class="modal-title" id="modal-review-title">New review</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for [@place, @review] do |f| %>
+                <%= f.input :rating %>
+                <%= f.input :content %>
+                <%= f.collection_check_boxes :genres, Genre.all, :id, :name %>
+            </div>
+            <div class="modal-footer" id="review-modal-footer">
+              <%= f.submit class: "btn btn-primary btn-sm rounded"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <p id="reviews-title">Reviews</p>
-      <!-- Slider main container -->
       <% if @place.reviews %>
+      <!-- Slider main container -->
         <div class="swiper-container s2">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
@@ -61,3 +92,4 @@
     </div>
   </div>
 </div>
+
