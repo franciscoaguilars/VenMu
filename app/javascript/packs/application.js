@@ -34,3 +34,7 @@ var swiper = new Swiper('.s2', {
     dynamicBullets: true,
   },
 });
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

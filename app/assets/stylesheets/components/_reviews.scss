@@ -18,6 +18,17 @@
   width: 90vw;
 }
 
+.review-button{
+  right: 5%;
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #47768E;
+}
+
 .reviews-info {
   width: 98%;
 }
@@ -47,6 +58,31 @@
   margin-bottom: 10px;
   color: #424040;
   margin-bottom: 1px;
+}
+
+#modal-review-title {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  text-transform: capitalize;
+  color: #424040;
+}
+
+#review-modal-header {
+  padding: 10px;
+}
+
+#review-modal-content {
+  background-color: white;
+}
+
+#review-modal-footer {
+  padding: 5px;
 }
 
 .review-rating {

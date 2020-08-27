@@ -18,9 +18,8 @@
   overflow: hidden;
   position: fixed;
   top: 0px;
-  z-index: 1;
   width: 100vw;
-  height: 500px;
+  height: 70vh;
   border-radius: 25px;
   background-size: cover;
   background-position: center;
@@ -37,7 +36,6 @@
 }
 
 .place-container {
-  z-index: 8;
   position: relative;
   top: 63vh;
   margin-top: 0vh;

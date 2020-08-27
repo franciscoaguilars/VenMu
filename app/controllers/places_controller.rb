@@ -27,6 +27,9 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
     authorize @place
+    @review = Review.new
+    @genres_review = GenresReview.new
+    @genres = Genre.all
   end
 
   def new
@@ -41,7 +44,7 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to place_path(@place)
     else
-      render :new
+      raise
     end
   end
 

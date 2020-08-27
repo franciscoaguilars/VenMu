@@ -62,13 +62,13 @@
     position: relative;
     animation: animatebottom 0.4s;
   }
-  
+
   @keyframes animatebottom {
     from {
       bottom: -300px;
       opacity: 0;
     }
-  
+
     to {
       bottom: 0;
       opacity: 1;
@@ -89,13 +89,13 @@
     color:white;
     text-align: center;
     vertical-align: middle;
-    line-height: 118px; 
-    font-weight: bold;  
+    line-height: 118px;
+    font-weight: bold;
     font-size: 20px;
     text-shadow: 4px 4px 4px #000000;
 }
 
-.modal-content{
+#modal-content-background{
     background: none;
 }
 

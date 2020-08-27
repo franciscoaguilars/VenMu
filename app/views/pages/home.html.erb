@@ -10,7 +10,7 @@
     <div class="row pb-5">
       <div class="col-sm-12 d-flex flex-column align-items-center">
         <%= simple_form_for :search, url: places_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-            <%= f.input :genre, placeholder: "Search by genre...", label: false, input_html: { class: 'search-bar' } %>   
+            <%= f.input :genre, placeholder: "Search by genre...", label: false, input_html: { class: 'search-bar' } %>
             <%= button_tag(type: 'submit', class: "btn btn-primary submit-btn") do %>
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
@@ -28,7 +28,7 @@
 
   <div class="modal fade animate light-background" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
-      <div class="modal-content animate-bottom mt-5"> 
+      <div class="modal-content animate-bottom mt-5" id="modal-content-background">
         <div class="modal-body">
           <div class="container">
             <div class="row d-flex justify-content-around">
